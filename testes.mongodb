@@ -1,0 +1,23 @@
+use biblioteca;
+
+db.book.deleteOne({id: "61ae9a40df0882acbbb9ea83"});
+
+db.book.find();
+
+db.book.insertOne({
+  "name": "Genesis",
+  "author": [
+    {
+      "name": "Moisés",
+      "surname": "Hebreu"
+    }
+  ],
+  "language": "Hebráico",
+  "releaseYear": 2000,
+  "publisher": "Israel",
+  "pages": 50
+});
+
+db.book.createIndex({name:1});
+db.book.explain().find({name:"Genesis"});
+
